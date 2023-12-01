@@ -1,5 +1,5 @@
 Initial entry
-docker run -d -p 8080:8080 -p 50000:50000 -name jenkins -v /home/osboxes/jenkins:/var/jenkins_home jenkins/jenkins
+docker run -d -p 8080:8080 -p 50000:50000 --name jenkins -v /home/osboxes/jenkins:/var/jenkins_home jenkins/jenkins
 docker run -d -p 8081:8081 --name nexus -v /home/osboxes/nexus-data:/nexus-data sonatype/nexus3
 docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube
 
@@ -7,5 +7,5 @@ docker volume create --name nexus-data
 docker run -d -p 8081:8081 --name nexus -v nexus-data:/nexus-data sonatype/nexus3
 docker container exec nexus cat /nexus-data/admin.password
 
-
+docker run --name postgres_container -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres
 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
