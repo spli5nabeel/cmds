@@ -8,4 +8,4 @@ docker run -d -p 8081:8081 --name nexus -v nexus-data:/nexus-data sonatype/nexus
 docker container exec nexus cat /nexus-data/admin.password
 
 docker run --name postgres_container -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 -v postgres_data:/var/lib/postgresql/data postgres
-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
+
